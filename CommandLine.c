@@ -8,7 +8,6 @@ JNIEXPORT void JNICALL Java_CommandLine_execCommand0(JNIEnv *env, jobject obj, j
   FILE *f;
   char line[SIZE];
   const char *cString = (*env)->GetStringUTFChars(env, command, 0);
-  printf("Executing command %s\n", cString);
   f = popen(cString, "r");
   if(f == NULL) {
     printf("Failed to execute command %s.", cString);
